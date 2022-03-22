@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "prepare": "husky install",
-    "add-commit-msg": "husky add .husky/commit-msg"
+    "add-commit-msg": "husky add .husky/commit-msg",
+    "pre-commit": "husky add .husky/pre-commit"
   },
   "dependencies": {
     "axios": "^0.26.1",
@@ -41,5 +42,11 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
