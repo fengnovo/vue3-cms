@@ -7,6 +7,7 @@
     text-color="#fff"
     unique-opened
     router
+    :collapse="$store.getters.menuCollapse"
   >
     <el-sub-menu
       :index="`${item.id}`"
@@ -36,7 +37,10 @@
 <script setup>
 import { menuList } from '@/api'
 import { onMounted, ref } from 'vue'
+// import { useStore } from 'vuex'
 // import variables from '@/styles/variables.scss'
+
+// const store = useStore()
 
 const iconList = ref(['user', 'setting', 'shop', 'tickets', 'pie-chart'])
 const childIcon = ref('menu')
@@ -54,4 +58,8 @@ const selectPath = (path) => {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+::v-deep .el-menu-item-group__title {
+  display: none;
+}
+</style>

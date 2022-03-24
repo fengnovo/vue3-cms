@@ -1,4 +1,4 @@
-import service from '@/common/ request'
+import service from '@/common/request'
 
 export const login = (data) => {
   return service({
